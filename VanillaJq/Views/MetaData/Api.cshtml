@@ -1,0 +1,47 @@
+﻿@model IEnumerable<VanillaJq.Controllers.ApiEndpointModel>
+
+
+
+
+<script>
+    // todo: make a require.js module
+   var  _data = (function () {
+
+        var result = {
+
+    @foreach (var endpoint in Model.GroupBy(e => e.Controller))
+    {
+
+        <text>'@(endpoint.Key)': { </text>
+        foreach (var action in endpoint)
+        {
+
+            Output.WriteLine("\t\t\t/// <summary>{0}</summary>", action.Documentation);
+
+            foreach (var p in action.Parameters)
+            {
+                Output.WriteLine("\t\t\t/// <param name=\"{0}\">{1}</param>", p.Name, p.Documentation);
+                //"DefaultApi", new { controller = action.Controller, action = action.Action }
+            }
+            <text>'@(action.Action)': function (@(string.Join(",", action.Parameters.Select(a => a.Name)))) {
+                return $.ajax({
+                    type: '@(action.Method)',
+                    url: '@(action.Path)',
+                    data: data,
+                    contentType: 'application/json'
+                });
+            },
+            </text>
+        
+        }
+        <text>},</text>
+
+        
+        
+    }
+    };
+
+    return result;
+
+})()
+</script>

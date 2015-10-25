@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>jQuery.SmoothState</id>
+    <version>0.5.1</version>
+    <title>jQuery SmoothState</title>
+    <authors>Miguel Ángel Pérez</authors>
+    <owners>Miguel Ángel Pérez</owners>
+    <licenseUrl>https://github.com/miguel-perez/jquery.smoothState.js</licenseUrl>
+    <projectUrl>https://github.com/miguel-perez/jquery.smoothState.js</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>We've accepted the jankiness of page loads as a quirk of the web even though there is no technical reason for it. smoothState.js lets you add transitions to eliminate the hard cuts and white flashes of page loads that deface the beauty of the user experience.</description>
+    <tags>jQuery plugins SmoothState</tags>
+    <dependencies>
+      <dependency id="jQuery" version="1.11.1" />
+    </dependencies>
+  </metadata>
+</package>

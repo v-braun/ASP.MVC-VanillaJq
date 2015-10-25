@@ -1,0 +1,21 @@
+﻿@using VanillaJq.Extensions
+@model VanillaJq.ViewModels.IndexVM
+
+
+<div>    
+    <div class="row">
+        <div class="col-md-4">
+            <a href="@Url.Action("Index", "Customer")">
+                @Html.Partial("Partials/CustomerTile", this.Model.Customer)
+            </a>            
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Index", "Vehicle")">
+                @Html.Partial("Partials/VehicleTile", this.Model.Vehicle)
+            </a>
+        </div>
+        <div class="col-md-4">
+            @Html.Partial("Partials/FinancingTile", this.Model.Financing)
+        </div>
+    </div>
+</div>

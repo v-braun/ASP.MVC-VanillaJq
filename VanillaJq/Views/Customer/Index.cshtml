@@ -1,0 +1,70 @@
+﻿@using VanillaJq
+@using VanillaJq.Models
+
+@using VanillaJq.Extensions
+
+@model VanillaJq.ViewModels.CustomerVM
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row" @Html.Module("view/customer/index", new
+            {
+                CustomerKindPrivate = CustomerKind.Private,
+                PrivateCustomerName1Lbl = Resources.PrivatePerson_Name1,
+                PrivateCustomerName2Lbl = Resources.PrivatePerson_Name2,
+                BusinessCustomerName1Lbl = Resources.BusinessPerson_Name1,
+                BusinessCustomerName2Lbl = Resources.BusinessPerson_Name2
+            }) >
+    <div class="col-md-8">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.FirstName)
+                        @Html.ValidationMessageFor(model => model.FirstName)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.LastName)
+                        @Html.ValidationMessageFor(model => model.LastName)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CustomerKind, new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EnumDropDownListFor(model => model.CustomerKind)
+                        @Html.ValidationMessageFor(model => model.CustomerKind)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+
+    <div class="col-md-4">
+        @Html.Partial("Partials/TileBar")
+    </div>
+
+</div>

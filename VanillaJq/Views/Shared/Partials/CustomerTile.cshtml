@@ -1,0 +1,11 @@
+﻿@using VanillaJq.Extensions
+
+@model VanillaJq.ViewModels.CustomerTileVM
+
+
+<div class="thumbnail tile tile-wide tile-purple" @Html.Module("view/shared/customerTile")>
+    <i class="glyphicon glyphicon-user tile-head"></i>
+
+    <div id="customerFullNameLbl">@Html.DisplayFor(m => m.FullName)</div>
+    <div>@Html.DisplayFor(m => m.CustomerKind)</div>
+</div>
