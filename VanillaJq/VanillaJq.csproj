@@ -329,6 +329,8 @@
     <Content Include="Scripts\core\vendor\respond.js" />
     <Content Include="Scripts\core\vendor\respond.min.js" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\extensions\animate.html.js" />
+    <Content Include="Scripts\extensions\smoother.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery.smoothState.js" />

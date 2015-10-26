@@ -3,13 +3,13 @@
         create: function ($) {
             return {
                 setCustomerContent: function (html) {
-                    $.find('#custTileContainer').html(html);
+                    $.find('#custTileContainer').animateHtml(html);
                 },
                 setVehicleContent: function (html) {
-                    $.find('#vehicleTileContainer').html(html);
+                    $.find('#vehicleTileContainer').animateHtml(html);
                 },
                 setFinanceContent: function (html) {
-                    $.find('#financeTileContainer').html(html);
+                    $.find('#financeTileContainer').animateHtml(html);
                 }
             };
         }

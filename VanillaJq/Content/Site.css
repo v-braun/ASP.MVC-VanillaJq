@@ -53,3 +53,63 @@ input[type="checkbox"].input-validation-error {
     margin-left:auto;
     margin-right:auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scene .scene_element {
+  -webkit-animation-duration: 0.85s;
+  -webkit-transition-timing-function: ease-in;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.scene .scene_element--fadeInRight {
+  -webkit-animation-name: fadeInRight;
+}
+
+.scene.is-exiting .scene_element {
+  -webkit-animation-direction: alternate-reverse;
+}
+
+/*
+ * Keyframes
+ */
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+
+

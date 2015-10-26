@@ -18,10 +18,16 @@ define([], function () {
                 // the HTML page.
                 jquery: 'jquery-2.1.4',
                 bootstrap: 'core/vendor/bootstrap.min',
+                animateHtml: 'extensions/animate.html',
+                smoothState: 'jquery.smoothState',
+                smoother: 'extensions/smoother',
+              
                 viewService: '../MetaData/View?noext'
             },
             shim: {
-                'bootstrap': ['jquery']
+                'smoothState': ['jquery'],
+                'animateHtml': ['jquery'],
+                'bootstrap': ['jquery', 'animateHtml']
             }
         });
     }
@@ -56,6 +62,7 @@ define([], function () {
     configureRequireJs(path);
 
     require(["jquery", "bootstrap"], function ($, bootstrap) {
+
         $(document).ready(function () {
 
             $('*[data-module]').each(function () {
